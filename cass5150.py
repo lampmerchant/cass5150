@@ -173,7 +173,7 @@ class CassetteSection:
   
   def crc_good(self):
     '''Returns True if all blocks have good CRCs.'''
-    return all(block.crc_good for block in self.blocks)
+    return all(block.crc_good() for block in self.blocks)
   
   def bad_crcs(self):
     '''Returns the total number of blocks with bad CRCs.'''

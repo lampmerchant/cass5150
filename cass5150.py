@@ -6,6 +6,13 @@ import sys
 import wave
 
 
+FILE_TYPE_D = 0x00  # data file
+FILE_TYPE_M = 0x01  # memory image
+FILE_TYPE_A = 0x40  # ASCII BASIC listing
+FILE_TYPE_B = 0x80  # tokenized BASIC program
+FILE_TYPE_P = 0xA0  # protected tokenized BASIC program
+
+
 def crc16(data, reg=0xFFFF, poly=0x1021):
   '''Feed data bytes through a 16-bit CRC calculator and return the register contents when done.'''
   for byte in data:
